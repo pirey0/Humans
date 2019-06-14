@@ -20,7 +20,7 @@ namespace AI
             UnityEngine.Profiling.Profiler.BeginSample("GetReflectiveFunction");
             var f = brain.GetFunction(methodName);
             UnityEngine.Profiling.Profiler.EndSample();
-            return f.Invoke();
+            return (bool) f.Invoke(brain.Controller,null);
         }
     }
 }

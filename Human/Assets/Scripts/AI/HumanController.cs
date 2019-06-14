@@ -36,14 +36,13 @@ public class HumanController : MonoBehaviour
         RandomizeMood();
     }
 
-
     private void Update()
     {
         var action = treeBrain.Think();
 
         if(action != null)
         {
-            action.Invoke();
+            action.Invoke(this, null);
         }
 
         UpdateAnimator();
@@ -92,7 +91,6 @@ public class HumanController : MonoBehaviour
 
     #endregion
 
-
     #region actions
 
     public void RandomizeMood()
@@ -126,7 +124,6 @@ public class HumanController : MonoBehaviour
     }
 
     #endregion
-
 
     private void SetMood(Mood m)
     {
@@ -162,7 +159,6 @@ public class HumanController : MonoBehaviour
         Neutral,
         Happy
     }
-
 
     private void OnGUI()
     {

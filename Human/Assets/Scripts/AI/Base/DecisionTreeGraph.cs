@@ -51,8 +51,8 @@ namespace AI
         private DecisionTreeGraph graph;
         private StartNode rootNode;
         private MonoBehaviour controller;
-        private Dictionary<string,System.Func<bool>> compiledFunctions; //lists to avoid recompiling reflected methods
-        private Dictionary<string, System.Action> compiledActions;
+        private Dictionary<string, MethodInfo> gottenFunctions; //lists to avoid getting functions already calculated
+        private Dictionary<string, MethodInfo> gottenMethods;
 
 
         public MonoBehaviour Controller
@@ -78,8 +78,8 @@ namespace AI
             graph.SetupBrainReferencesInNodes();
             rootNode = GetRootNode();
 
-            compiledActions = new Dictionary<string, Action>();
-            compiledFunctions = new Dictionary<string, Func<bool>>();
+            gottenMethods = new Dictionary<string, MethodInfo>();
+            gottenFunctions = new Dictionary<string, MethodInfo>();
         }
 
         private StartNode GetRootNode()
@@ -95,7 +95,7 @@ namespace AI
             throw new System.Exception("No Root node found");
         }
 
-        public virtual System.Action Think()
+        public virtual MethodInfo Think()
         {
             UnityEngine.Profiling.Profiler.BeginSample("DecisionTree.Think()");
 
@@ -112,11 +112,11 @@ namespace AI
 
         }
         
-        public System.Func<bool> GetFunction(string name)
+        public MethodInfo GetFunction(string name)
         {
-            if (compiledFunctions.ContainsKey(name))
+            if (gottenFunctions.ContainsKey(name))
             {
-                return compiledFunctions[name];
+                return gottenFunctions[name];
             }
 
 
@@ -128,18 +128,16 @@ namespace AI
                 throw new Exception("Could not find requested method " + name);
             }
 
-            var function = Expression.Lambda<Func<bool>>(Expression.Call(Expression.Constant(controller), method)).Compile();
-            compiledFunctions.Add(name, function);
-            Debug.Log("Compiling new function for " + controller.name + ": " + name);
-            return function;
+            gottenFunctions.Add(name, method);
+            return method;
 
         }
 
-        public System.Action GetAction(string name)
+        public MethodInfo GetAction(string name)
         {
-            if (compiledActions.ContainsKey(name))
+            if (gottenMethods.ContainsKey(name))
             {
-                return compiledActions[name];
+                return gottenMethods[name];
             }
 
             var method = controller.GetType().GetMethod(name,
@@ -149,10 +147,9 @@ namespace AI
             {
                 throw new Exception("Could not find requested method " + name);
             }
-            var action = Expression.Lambda<Action>(Expression.Call(Expression.Constant(controller), method)).Compile();
-            compiledActions.Add(name, action);
-            Debug.Log("Compiling new action for " + controller.name + ": " + name);
-            return action;
+
+            gottenMethods.Add(name, method);
+            return method;
         }
 
     }
