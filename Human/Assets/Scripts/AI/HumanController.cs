@@ -7,6 +7,7 @@ public class HumanController : MonoBehaviour
 {
     [SerializeField] bool debug;
     [SerializeField] AI.DecisionTreeGraph graph;
+    [SerializeField] RandomGraphGenerator randomGraph;
 
     [Space(10)]
     [SerializeField] float sadSpeed;
@@ -23,7 +24,13 @@ public class HumanController : MonoBehaviour
 
     private void Start()
     {
+        if(randomGraph != null)
+        {
+            graph = randomGraph.GetRandomGraph();
+        }
+
         treeBrain = new AI.DecisionTreeBrain(this, graph);
+
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         RandomizeMood();
