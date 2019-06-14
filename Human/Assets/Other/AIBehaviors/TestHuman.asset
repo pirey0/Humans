@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reflective Action Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1128, y: 8}
+  position: {x: -1112, y: 88}
   ports:
     keys:
     - output
@@ -54,6 +54,460 @@ MonoBehaviour:
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
   actionName: RandomizeMood
+--- !u!114 &-8544064340081608276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0466bddb3a7df784e86399947295d6e4, type: 3}
+  m_Name: Reflective Action Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1384, y: -344}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -8544064340081608276}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: falseNode
+        node: {fileID: -1031465468568854360}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -8544064340081608276}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -8544064340081608276}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  actionName: Yell
+--- !u!114 &-7302962442121063636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc150dc418029d54ea5b207628b1a841, type: 3}
+  m_Name: Reflective Decision Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -824, y: -376}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -7302962442121063636}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: 6891964675115714971}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -7302962442121063636}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -1031465468568854360}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -7302962442121063636}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -3675380155019212327}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  methodName: RandomLowPercentChoice
+--- !u!114 &-4321931246951055436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12aafe18d0422fe46a4a8fa54140ccb6, type: 3}
+  m_Name: Empty Action
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -536, y: -200}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -4321931246951055436}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: -2908781138052228390}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -4321931246951055436}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -4321931246951055436}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+--- !u!114 &-3675380155019212327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12aafe18d0422fe46a4a8fa54140ccb6, type: 3}
+  m_Name: Empty Action
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1144, y: -264}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -3675380155019212327}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: falseNode
+        node: {fileID: -7302962442121063636}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -3675380155019212327}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -3675380155019212327}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+--- !u!114 &-2908781138052228390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc150dc418029d54ea5b207628b1a841, type: 3}
+  m_Name: Reflective Decision Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -280, y: -104}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -2908781138052228390}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: 4447007025557792}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -2908781138052228390}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -4321931246951055436}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -2908781138052228390}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 6891964675115714971}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  methodName: InAnimation
+--- !u!114 &-2400653640779467062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc150dc418029d54ea5b207628b1a841, type: 3}
+  m_Name: Reflective Decision Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -104}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -2400653640779467062}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: 2413383938863022798}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -2400653640779467062}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -1593638136297377335}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -2400653640779467062}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 957574831973710636}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  methodName: RandomChoice
+--- !u!114 &-1593638136297377335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0466bddb3a7df784e86399947295d6e4, type: 3}
+  m_Name: Reflective Action Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1368, y: -120}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -1593638136297377335}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: -2400653640779467062}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -1593638136297377335}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -1593638136297377335}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  actionName: Idle
+--- !u!114 &-1031465468568854360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc150dc418029d54ea5b207628b1a841, type: 3}
+  m_Name: Reflective Decision Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1128, y: -440}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: -1031465468568854360}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: -7302962442121063636}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: -1031465468568854360}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: 69027963167411453}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: -1031465468568854360}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -8544064340081608276}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  methodName: RandomChoice
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,12 +523,20 @@ MonoBehaviour:
   nodes:
   - {fileID: 5556757372575179592}
   - {fileID: 4447007025557792}
-  - {fileID: 8673906234271608045}
   - {fileID: 6891964675115714971}
-  - {fileID: 8362730162400501637}
   - {fileID: 2413383938863022798}
   - {fileID: 957574831973710636}
   - {fileID: -8770273331312747078}
+  - {fileID: -2908781138052228390}
+  - {fileID: 8466092676921661563}
+  - {fileID: -4321931246951055436}
+  - {fileID: -7302962442121063636}
+  - {fileID: -1031465468568854360}
+  - {fileID: -3675380155019212327}
+  - {fileID: 69027963167411453}
+  - {fileID: -8544064340081608276}
+  - {fileID: -2400653640779467062}
+  - {fileID: -1593638136297377335}
 --- !u!114 &4447007025557792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +550,7 @@ MonoBehaviour:
   m_Name: Has Brain Decision Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: -88}
+  position: {x: 104, y: -120}
   ports:
     keys:
     - output
@@ -113,7 +575,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 6891964675115714971}
+        node: {fileID: -2908781138052228390}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -125,7 +587,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 8673906234271608045}
+        node: {fileID: 8466092676921661563}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -134,6 +596,60 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
+--- !u!114 &69027963167411453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0466bddb3a7df784e86399947295d6e4, type: 3}
+  m_Name: Reflective Action Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1384, y: -440}
+  ports:
+    keys:
+    - output
+    - trueNode
+    - falseNode
+    values:
+    - _fieldName: output
+      _node: {fileID: 69027963167411453}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: trueNode
+        node: {fileID: -1031465468568854360}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: trueNode
+      _node: {fileID: 69027963167411453}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: falseNode
+      _node: {fileID: 69027963167411453}
+      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  output: {fileID: 0}
+  trueNode: {fileID: 0}
+  falseNode: {fileID: 0}
+  actionName: Pray
 --- !u!114 &957574831973710636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +663,7 @@ MonoBehaviour:
   m_Name: Reflective Action Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1128, y: -104}
+  position: {x: -1368, y: -24}
   ports:
     keys:
     - output
@@ -159,8 +675,8 @@ MonoBehaviour:
       _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: trueNode
-        node: {fileID: 2413383938863022798}
+      - fieldName: falseNode
+        node: {fileID: -2400653640779467062}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -226,7 +742,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 957574831973710636}
+        node: {fileID: -2400653640779467062}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -261,7 +777,7 @@ MonoBehaviour:
   m_Name: Start Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 72, y: -104}
+  position: {x: 392, y: -136}
   ports:
     keys:
     - output
@@ -315,8 +831,8 @@ MonoBehaviour:
       _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: trueNode
-        node: {fileID: 4447007025557792}
+      - fieldName: falseNode
+        node: {fileID: -2908781138052228390}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -328,7 +844,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: output
-        node: {fileID: 8362730162400501637}
+        node: {fileID: -7302962442121063636}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -350,7 +866,7 @@ MonoBehaviour:
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
   methodName: HasPath
---- !u!114 &8362730162400501637
+--- !u!114 &8466092676921661563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,7 +879,7 @@ MonoBehaviour:
   m_Name: Empty Action
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -840, y: -200}
+  position: {x: -232, y: 72}
   ports:
     keys:
     - output
@@ -371,60 +887,7 @@ MonoBehaviour:
     - falseNode
     values:
     - _fieldName: output
-      _node: {fileID: 8362730162400501637}
-      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: trueNode
-        node: {fileID: 6891964675115714971}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: trueNode
-      _node: {fileID: 8362730162400501637}
-      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: falseNode
-      _node: {fileID: 8362730162400501637}
-      _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  output: {fileID: 0}
-  trueNode: {fileID: 0}
-  falseNode: {fileID: 0}
---- !u!114 &8673906234271608045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12aafe18d0422fe46a4a8fa54140ccb6, type: 3}
-  m_Name: Empty Action
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -392, y: 72}
-  ports:
-    keys:
-    - output
-    - trueNode
-    - falseNode
-    values:
-    - _fieldName: output
-      _node: {fileID: 8673906234271608045}
+      _node: {fileID: 8466092676921661563}
       _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
@@ -436,7 +899,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: trueNode
-      _node: {fileID: 8673906234271608045}
+      _node: {fileID: 8466092676921661563}
       _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
@@ -445,7 +908,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: falseNode
-      _node: {fileID: 8673906234271608045}
+      _node: {fileID: 8466092676921661563}
       _typeQualifiedName: AI.Base.DecisionNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []

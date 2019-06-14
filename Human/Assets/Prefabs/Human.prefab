@@ -206,6 +206,11 @@ MonoBehaviour:
   sadSpeed: 5
   normalSpeed: 10
   happySpeed: 8
+  prayLength: 5
+  yellLength: 8.5
+  idleLength: 4
+  chanceThreshold: 0.002
+  movingThreshold: 2.5
 --- !u!95 &5307389676687726861
 Animator:
   serializedVersion: 3

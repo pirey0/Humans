@@ -10,15 +10,16 @@ public class HumanController : MonoBehaviour
 
     [Space(10)]
     [SerializeField] float sadSpeed;
-    [SerializeField] float normalSpeed, happySpeed;
+    [SerializeField] float normalSpeed, happySpeed, prayLength, yellLength, idleLength, chanceThreshold, movingThreshold;
 
     AI.DecisionTreeBrain treeBrain;
     NavMeshAgent agent;
     Animator animator;
 
-    private bool inAnimation = false;
     private float mood;
     private float animationTimeTracker;
+
+    private Vector3 previousPos;
 
     private void Start()
     {
@@ -45,7 +46,10 @@ public class HumanController : MonoBehaviour
     {
         animationTimeTracker -= Time.deltaTime;
 
-        if (HasPath())
+        float movAmount = (transform.position - previousPos).magnitude/Time.deltaTime;
+        previousPos = transform.position;
+
+        if (movAmount > movingThreshold)
         {
             animator.SetBool("Walk", true);
         }
@@ -53,6 +57,8 @@ public class HumanController : MonoBehaviour
         {
             animator.SetBool("Walk", false);
         }
+
+
     }
 
     #region functions
@@ -72,6 +78,11 @@ public class HumanController : MonoBehaviour
         return Random.value > 0.5f;
     }
 
+    public bool RandomLowPercentChoice()
+    {
+        return Random.value < chanceThreshold;
+    }
+
     #endregion
 
 
@@ -87,6 +98,25 @@ public class HumanController : MonoBehaviour
         agent.destination = new Vector3(Random.value * 100 -50, 0, Random.value * 100 -50);
     }
 
+    public void Pray()
+    {
+        animationTimeTracker = prayLength;
+        animator.SetTrigger("Pray");
+        agent.destination = transform.position;
+    }
+
+    public void Yell()
+    {
+        animationTimeTracker = yellLength;
+        animator.SetTrigger("Yell");
+        agent.destination = transform.position;
+    }
+
+    public void Idle()
+    {
+        animationTimeTracker = yellLength;
+        agent.destination = transform.position;
+    }
 
     #endregion
 
@@ -124,5 +154,21 @@ public class HumanController : MonoBehaviour
         Sad,
         Neutral,
         Happy
+    }
+
+
+    private void OnGUI()
+    {
+        if (!debug)
+        {
+            return;
+        }
+
+        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up);
+        pos.y = Screen.height - pos.y;
+        GUI.color = Color.black;
+
+        GUI.Label(new Rect(pos.x, pos.y, 200, 30), "In Animation: " + InAnimation());
+        GUI.Label(new Rect(pos.x, pos.y+30, 200, 30), "Has Path: " + HasPath());
     }
 }
