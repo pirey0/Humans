@@ -301,13 +301,14 @@ MonoBehaviour:
   - Clicked
   - RandomLowPercentChoice
   - RandomChoice
-  - HasPath
   actions:
   - Idle
   - Pray
   - Yell
   - RandomizeMood
   - RandomizeDestination
+  - MoveAwayFromMouse
+  - MoveTowardsMouse
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

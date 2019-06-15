@@ -21,7 +21,7 @@ public class HumanController : MonoBehaviour
 
     private float mood;
     private float animationTimeTracker;
-
+    private Plane plane;
     private Vector3 previousPos;
 
     public DecisionTreeGraph Graph { get => graph; }
@@ -34,10 +34,10 @@ public class HumanController : MonoBehaviour
         }
 
         treeBrain = new AI.DecisionTreeBrain(this, graph);
-        
-
+        plane = new Plane(Vector3.up, Vector3.zero);
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+
         RandomizeMood();
 
     }
@@ -138,6 +138,38 @@ public class HumanController : MonoBehaviour
     {
         animationTimeTracker = yellLength;
         agent.destination = transform.position;
+    }
+
+    public void MoveAwayFromMouse()
+    {
+        Vector3 pos;
+        if(GetMousePos(out pos))
+        {
+            agent.SetDestination(transform.position + (transform.position - pos).normalized*3);
+        }
+    }
+
+    public void MoveTowardsMouse()
+    {
+        Vector3 pos;
+        if (GetMousePos(out pos))
+        {
+            agent.SetDestination(transform.position + (pos - transform.position).normalized*3);
+        }
+    }
+
+    private bool GetMousePos(out Vector3 pos)
+    {
+        Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float dis;
+        if(plane.Raycast(r,out dis))
+        {
+            pos = r.origin + r.direction * dis;
+            return true;
+        }
+
+        pos = Vector3.zero;
+        return false;
     }
 
     #endregion
