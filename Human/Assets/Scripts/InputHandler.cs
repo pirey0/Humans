@@ -6,6 +6,7 @@ public class InputHandler : Singleton<InputHandler>
 {
 
     List<HumanController> hovering;
+    HumanController[] selected;
 
     void Start()
     {
@@ -27,6 +28,23 @@ public class InputHandler : Singleton<InputHandler>
             }
         }
 
+
+        if (Input.GetMouseButtonDown(1))
+        {
+
+            if (hovering.Count > 0)
+            {
+                selected = hovering.ToArray();
+            }
+            else
+            {
+                selected = null;
+            }
+
+        }
+
+    
+
     }
 
     public bool IsHovering(HumanController hc)
@@ -38,4 +56,17 @@ public class InputHandler : Singleton<InputHandler>
     {
         return Input.GetMouseButtonDown(0) && IsHovering(hc);
     }
+
+
+    private void OnGUI()
+    {
+        if(selected != null)
+        {
+            if(GUI.Button(new Rect(10, Screen.height - 100, 200,30), "Save " + selected.Length + " humans"))
+            {
+                GraphSaver.Instance.SaveHumans(selected, "Human");
+            }
+        }
+    }
+
 }

@@ -8,20 +8,20 @@ namespace AI
 {
     public class ReflectiveActionNode : ActionNode
     {
-        [SerializeField] string actionName;
+        [SerializeField] public string ActionName;
 
         public override object GetValue(NodePort port)
         {
             if (brain != null)
             {
-                if(actionName == "" || actionName == "null" || actionName == "Nothing")
+                if(ActionName == "" || ActionName == "null" || ActionName == "Nothing")
                 {
                     Action = null;
                 }
                 else
                 {
                     UnityEngine.Profiling.Profiler.BeginSample("GetReflectiveAction");
-                    Action = brain.GetAction(actionName);
+                    Action = brain.GetAction(ActionName);
                     UnityEngine.Profiling.Profiler.EndSample();
                 }
             }

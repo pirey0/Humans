@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  graph: {fileID: 11400000, guid: 712c95c9ccc171f4296e1d2551472f5a, type: 2}
-  randomGraph: {fileID: 0}
+  graph: {fileID: 0}
+  randomGraph: 1
   sadSpeed: 5
   normalSpeed: 10
   happySpeed: 8

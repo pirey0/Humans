@@ -53,7 +53,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  actionName: RandomizeMood
+  ActionName: 
 --- !u!114 &-8544064340081608276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  actionName: Yell
+  ActionName: 
 --- !u!114 &-7302962442121063636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  methodName: RandomLowPercentChoice
+  MethodName: RandomChoice
 --- !u!114 &-4321931246951055436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  methodName: InAnimation
+  MethodName: InAnimation
 --- !u!114 &-2400653640779467062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  methodName: RandomChoice
+  MethodName: RandomChoice
 --- !u!114 &-1593638136297377335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  actionName: Idle
+  ActionName: 
 --- !u!114 &-1031465468568854360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  methodName: RandomChoice
+  MethodName: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  actionName: Pray
+  ActionName: 
 --- !u!114 &957574831973710636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,7 +703,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  actionName: RandomizeDestination
+  ActionName: 
 --- !u!114 &2413383938863022798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +763,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  methodName: RandomChoice
+  MethodName: RandomChoice
 --- !u!114 &5556757372575179592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   output: {fileID: 0}
   trueNode: {fileID: 0}
   falseNode: {fileID: 0}
-  methodName: HasPath
+  MethodName: HasPath
 --- !u!114 &8466092676921661563
 MonoBehaviour:
   m_ObjectHideFlags: 0

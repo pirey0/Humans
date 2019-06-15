@@ -8,7 +8,7 @@ namespace AI
 {
     public class ReflectiveDecisionNode : DecisionNode
     {
-        [SerializeField] private string methodName;
+        [SerializeField] public string MethodName;
 
         protected override bool IsTrue()
         {
@@ -18,7 +18,7 @@ namespace AI
                 return true;
             }
             UnityEngine.Profiling.Profiler.BeginSample("GetReflectiveFunction");
-            var f = brain.GetFunction(methodName);
+            var f = brain.GetFunction(MethodName);
             UnityEngine.Profiling.Profiler.EndSample();
             return (bool) f.Invoke(brain.Controller,null);
         }

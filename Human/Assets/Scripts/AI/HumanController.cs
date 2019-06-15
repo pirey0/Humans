@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using AI;
+using UnityEditor;
 
 public class HumanController : MonoBehaviour
 {
     [SerializeField] bool debug;
     [SerializeField] DecisionTreeGraph graph;
-    [SerializeField] RandomGraphGenerator randomGraph;
+    [SerializeField] bool randomGraph;
 
     [Space(10)]
     [SerializeField] float sadSpeed;
@@ -23,14 +24,17 @@ public class HumanController : MonoBehaviour
 
     private Vector3 previousPos;
 
+    public DecisionTreeGraph Graph { get => graph; }
+
     private void Start()
     {
-        if(randomGraph != null)
+        if (randomGraph)
         {
-            graph = randomGraph.GetRandomGraph();
+            graph = RandomGraphGenerator.Instance.GetRandomGraph();
         }
 
         treeBrain = new AI.DecisionTreeBrain(this, graph);
+        
 
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
