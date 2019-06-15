@@ -166,9 +166,10 @@ GameObject:
   - component: {fileID: 8893812848662629254}
   - component: {fileID: 5307389676687726861}
   - component: {fileID: 7691348054589340760}
+  - component: {fileID: 347940189}
   m_Layer: 0
   m_Name: Human
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   graph: {fileID: 11400000, guid: 712c95c9ccc171f4296e1d2551472f5a, type: 2}
+  randomGraph: {fileID: 0}
   sadSpeed: 5
   normalSpeed: 10
   happySpeed: 8
@@ -249,9 +251,22 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 8
-  m_BaseOffset: 0
+  m_BaseOffset: -0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &347940189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258466734408353380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4621964, y: 7.6273746, z: 2.1262364}
+  m_Center: {x: 0.039896965, y: 4.0526514, z: 0.25513482}
 --- !u!1 &1654721729008272140
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using AI;
 
 public class HumanController : MonoBehaviour
 {
     [SerializeField] bool debug;
-    [SerializeField] AI.DecisionTreeGraph graph;
+    [SerializeField] DecisionTreeGraph graph;
     [SerializeField] RandomGraphGenerator randomGraph;
 
     [Space(10)]
     [SerializeField] float sadSpeed;
     [SerializeField] float normalSpeed, happySpeed, prayLength, yellLength, idleLength, chanceThreshold, movingThreshold;
 
-    AI.DecisionTreeBrain treeBrain;
+    DecisionTreeBrain treeBrain;
     NavMeshAgent agent;
     Animator animator;
 
@@ -34,6 +35,7 @@ public class HumanController : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         RandomizeMood();
+
     }
 
     private void Update()
@@ -52,7 +54,7 @@ public class HumanController : MonoBehaviour
     {
         animationTimeTracker -= Time.deltaTime;
 
-        float movAmount = (transform.position - previousPos).magnitude/Time.deltaTime;
+        float movAmount = (transform.position - previousPos).magnitude/Time.deltaTime; 
         previousPos = transform.position;
 
         if (movAmount > movingThreshold)
@@ -88,6 +90,17 @@ public class HumanController : MonoBehaviour
     {
         return Random.value < chanceThreshold;
     }
+
+    public bool Hovering()
+    {
+        return InputHandler.Instance.IsHovering(this);
+    }
+
+    public bool Clicked()
+    {
+        return InputHandler.Instance.IsClickingOn(this);
+    }
+
 
     #endregion
 
