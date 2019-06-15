@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : Singleton<Spawner>
 {
     [SerializeField] GameObject prefab;
 
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void Spawn(int amount)
+    public void Spawn(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
@@ -35,9 +35,9 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void Spawn()
+    public void Spawn()
     {
         var g = Instantiate(prefab);
-        g.transform.position = transform.position;
+        g.transform.position = new Vector3(Random.value*100 -50, -0.27f, Random.value*100 -50);
     }
 }

@@ -54,7 +54,7 @@ public class InputHandler : Singleton<InputHandler>
 
     public bool IsClickingOn(HumanController hc)
     {
-        return Input.GetMouseButtonDown(0) && IsHovering(hc);
+        return Input.GetMouseButton(0) && IsHovering(hc);
     }
 
 
@@ -65,6 +65,15 @@ public class InputHandler : Singleton<InputHandler>
             if(GUI.Button(new Rect(10, Screen.height - 100, 200,30), "Save " + selected.Length + " humans"))
             {
                 GraphSaver.Instance.SaveHumans(selected, "Human");
+            }
+
+            if (GUI.Button(new Rect(10, Screen.height - 70, 200, 30), "Replace " + selected.Length + " humans"))
+            {
+                Spawner.Instance.Spawn(selected.Length);
+                foreach (var s in selected)
+                {
+                    Destroy(s.gameObject);
+                }
             }
         }
     }
