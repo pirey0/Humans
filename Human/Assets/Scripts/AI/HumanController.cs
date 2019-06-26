@@ -37,7 +37,7 @@ public class HumanController : MonoBehaviour
         plane = new Plane(Vector3.up, Vector3.zero);
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-
+        agent.avoidancePriority = Random.Range(0, 100);
         RandomizeMood();
 
     }
