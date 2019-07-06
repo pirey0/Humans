@@ -15,6 +15,9 @@ public class HumanController : MonoBehaviour
     [SerializeField] float sadSpeed;
     [SerializeField] float normalSpeed, happySpeed, prayLength, yellLength, idleLength, chanceThreshold, movingThreshold;
 
+    [SerializeField] bool randomizeAvoidancePriority, run;
+   
+
     DecisionTreeBrain treeBrain;
     NavMeshAgent agent;
     Animator animator;
@@ -37,7 +40,12 @@ public class HumanController : MonoBehaviour
         plane = new Plane(Vector3.up, Vector3.zero);
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        agent.avoidancePriority = Random.Range(0, 100);
+
+        if (randomizeAvoidancePriority)
+        {
+            agent.avoidancePriority = Random.Range(0, 100);
+        }
+
         RandomizeMood();
 
     }
@@ -63,13 +71,27 @@ public class HumanController : MonoBehaviour
 
         if (movAmount > movingThreshold)
         {
-            animator.SetBool("Walk", true);
+            if (!run)
+            {
+                animator.SetBool("Walk", true);
+            }
+            else
+            {
+                animator.SetBool("Running", true);
+            }
+
         }
         else
         {
-            animator.SetBool("Walk", false);
+            if (!run)
+            {
+                animator.SetBool("Walk", false);
+            }
+            else
+            {
+                animator.SetBool("Running", false );
+            }
         }
-
 
     }
 
@@ -105,6 +127,10 @@ public class HumanController : MonoBehaviour
         return InputHandler.Instance.IsClickingOn(this);
     }
 
+    public bool MoodIsNeutral()
+    {
+        return mood == 0.5f;
+    }
 
     #endregion
 
@@ -118,6 +144,11 @@ public class HumanController : MonoBehaviour
     public void RandomizeDestination()
     {
         agent.destination = new Vector3(Random.value * 100 -50, 0, Random.value * 100 -50);
+    }
+
+    public void MoveToOpposite()
+    {
+        agent.destination = new Vector3(-transform.position.x, 0,- transform.position.z);
     }
 
     public void Pray()
@@ -206,7 +237,7 @@ public class HumanController : MonoBehaviour
     {
         Sad,
         Neutral,
-        Happy
+        Happy 
     }
 
     private void OnGUI()
