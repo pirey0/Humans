@@ -26,6 +26,7 @@ public class HumanController : MonoBehaviour
     private float animationTimeTracker;
     private Plane plane;
     private Vector3 previousPos;
+    private bool firstPathAssigned = false;
 
     public DecisionTreeGraph Graph { get => graph; }
 
@@ -132,9 +133,19 @@ public class HumanController : MonoBehaviour
         return mood == 0.5f;
     }
 
+    public bool NoPathAssigendYet()
+    {
+        return !firstPathAssigned;
+    }
+
     #endregion
 
     #region actions
+
+    public void Selfdestruct()
+    {
+        Destroy(gameObject);
+    }
 
     public void RandomizeMood()
     {
@@ -144,11 +155,13 @@ public class HumanController : MonoBehaviour
     public void RandomizeDestination()
     {
         agent.destination = new Vector3(Random.value * 100 -50, 0, Random.value * 100 -50);
+        firstPathAssigned = true;
     }
 
     public void MoveToOpposite()
     {
         agent.destination = new Vector3(-transform.position.x, 0,- transform.position.z);
+        firstPathAssigned = true;
     }
 
     public void Pray()
