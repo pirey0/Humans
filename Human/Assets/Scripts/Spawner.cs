@@ -44,16 +44,20 @@ public class Spawner : Singleton<Spawner>
 
     private void Update()
     {
+
         if(timers != null)
         {
             foreach (var timer in timers)
             {
-                if (Random.value < timer.Probability*Time.deltaTime)
+                Debug.Log("Spawn time: " + timer.Probability.Evaluate(Time.time));
+
+                if (Random.value < timer.Probability.Evaluate(Time.time) * Time.deltaTime)
                 {
                     if(timer.Position == SpawnTimer.PositionType.Random)
                     {
                         Spawn(timer.Amount);
-                    }else if(timer.Position == SpawnTimer.PositionType.Areas)
+                    }
+                    else if(timer.Position == SpawnTimer.PositionType.Areas)
                     {
                         SpawnInRandomArea(timer.Amount);
                     }
@@ -126,7 +130,7 @@ public class Area
 public class SpawnTimer
 {
     public PositionType Position;
-    [Range(0,4f)] public float Probability;
+    public AnimationCurve Probability;
     [Range(1,10)] public int Amount;
 
 

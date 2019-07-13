@@ -15,7 +15,7 @@ public class HumanController : MonoBehaviour
     [SerializeField] float sadSpeed;
     [SerializeField] float normalSpeed, happySpeed, prayLength, yellLength, idleLength, chanceThreshold, movingThreshold;
 
-    [SerializeField] bool randomizeAvoidancePriority, run;
+    [SerializeField] bool randomizeAvoidancePriority, run, randomizeMood;
    
 
     DecisionTreeBrain treeBrain;
@@ -47,8 +47,14 @@ public class HumanController : MonoBehaviour
             agent.avoidancePriority = Random.Range(0, 100);
         }
 
-        RandomizeMood();
-
+        if (randomizeMood)
+        {
+            RandomizeMood();
+        }
+        else
+        {
+            SetMood(Mood.Neutral);
+        }
     }
 
     private void Update()
