@@ -307,18 +307,19 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.15328372
       - serializedVersion: 3
-        time: 602.166
-        value: 9.940247
-        inSlope: 0.0009621304
-        outSlope: 0.0009621304
+        time: 2044.1655
+        value: 100.37769
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.15931827
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     Amount: 1
+    TimeMultiplyer: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,8 +487,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.5008302, y: 0.114439346, z: -0.051035937, w: 0.85642755}
-  m_LocalPosition: {x: -8.7, y: 51.2, z: -27.3}
+  m_LocalRotation: {x: -0.28868407, y: 0.28694227, z: -0.0919462, w: -0.90877473}
+  m_LocalPosition: {x: 11.781209, y: 12.855074, z: -17.261316}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -504,6 +505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Helpless
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198417125378128477, guid: da7b0b1f896a4a647838ca7d29ad45c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Focus
       objectReference: {fileID: 0}
     - target: {fileID: 9115044911403403342, guid: da7b0b1f896a4a647838ca7d29ad45c1,
         type: 3}

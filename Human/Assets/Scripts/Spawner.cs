@@ -49,9 +49,7 @@ public class Spawner : Singleton<Spawner>
         {
             foreach (var timer in timers)
             {
-                Debug.Log("Spawn time: " + timer.Probability.Evaluate(Time.time));
-
-                if (Random.value < timer.Probability.Evaluate(Time.time) * Time.deltaTime)
+                if (Random.value < timer.Probability.Evaluate(Time.time* timer.TimeMultiplyer) * Time.deltaTime)
                 {
                     if(timer.Position == SpawnTimer.PositionType.Random)
                     {
@@ -132,6 +130,7 @@ public class SpawnTimer
     public PositionType Position;
     public AnimationCurve Probability;
     [Range(1,10)] public int Amount;
+    public float TimeMultiplyer;
 
 
     public enum PositionType

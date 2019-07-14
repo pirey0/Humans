@@ -15,9 +15,11 @@
 		UNITY_TRANSFER_INSTANCE_ID(v,o);
 		UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+
 		//vertex positions
 		o.posWorld = mul(unity_ObjectToWorld, v.vertex);
 		o.pos =  UnityObjectToClipPos(v.vertex);
+
 
 		//texcoords
 		o.uv_Main = TRANSFORM_TEX(v.texcoord0, _MainTex);
