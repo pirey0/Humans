@@ -53,7 +53,7 @@ public class HumanController : MonoBehaviour
         }
         else
         {
-            SetMood(Mood.Sad);
+            SetMood(Mood.Neutral);
         }
     }
 
