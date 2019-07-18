@@ -4,23 +4,8 @@ using UnityEngine;
 
 public class StepDrawer : MonoBehaviour
 {
-    [SerializeField] Transform footLeft, footRight;
     [SerializeField] Material stampMat;
     [SerializeField] Texture2D stampTexture;
-
-
-
-    public void LeftStep()
-    {
-        Debug.Log("Left");
-        TryDrawFrom(footLeft.position);
-    }
-
-    public void RightStep()
-    {
-        Debug.Log("Right");
-        TryDrawFrom(footRight.position);
-    }
 
 
 
@@ -28,14 +13,21 @@ public class StepDrawer : MonoBehaviour
     {
         RaycastHit hit;
         Debug.DrawLine(pos, pos + Vector3.down);
-        if(Physics.Raycast(pos, Vector3.down, out hit))
+        if (Physics.Raycast(pos, Vector3.down, out hit))
         {
             OverlaySystem os = hit.transform.GetComponent<OverlaySystem>();
-            if(os != null)
+            if (os != null)
             {
                 os.DrawAt(hit.textureCoord, stampTexture, stampMat);
             }
 
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("AAA");
+        TryDrawFrom(transform.position + Vector3.up * 0.3f);
+    }
+
 }

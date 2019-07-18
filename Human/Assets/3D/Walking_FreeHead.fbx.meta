@@ -62,7 +62,8 @@ ModelImporter:
       - time: 0.3171206
         functionName: LeftStep
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: d17d6667241bacb40bd5859c7bcb563f,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
