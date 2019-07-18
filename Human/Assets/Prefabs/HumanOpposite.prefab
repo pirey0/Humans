@@ -241,9 +241,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2823089610678645879}
   - component: {fileID: 8893812848662629254}
+  - component: {fileID: 5352828960874227797}
   - component: {fileID: 5307389676687726861}
   - component: {fileID: 7691348054589340760}
   - component: {fileID: 347940189}
+  - component: {fileID: 479052229}
   m_Layer: 0
   m_Name: HumanOpposite
   m_TagString: Human
@@ -295,6 +297,18 @@ MonoBehaviour:
   randomizeAvoidancePriority: 0
   run: 0
   randomizeMood: 0
+--- !u!114 &5352828960874227797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258466734408353380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17d6667241bacb40bd5859c7bcb563f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5307389676687726861
 Animator:
   serializedVersion: 3
@@ -304,7 +318,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258466734408353380}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bb921ca83ae820b418c61ad2b7767a28, type: 3}
+  m_Avatar: {fileID: 9000000, guid: b08ab017f91bc3f479e259e4323e568d, type: 3}
   m_Controller: {fileID: 9100000, guid: b167a896fecc3864db291e1f254e19cf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -349,6 +363,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.4621964, y: 7.6273746, z: 2.1262364}
   m_Center: {x: 0.039896965, y: 4.0526514, z: 0.25513482}
+--- !u!114 &479052229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258466734408353380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f355d39fd8f0b734089becc3ebc46b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footLeft: {fileID: 8428141054709501455}
+  footRight: {fileID: 5437564442866521969}
+  stampMat: {fileID: 2100000, guid: 15b6c433a79793a449e8dd0afaf4708a, type: 2}
+  stampTexture: {fileID: 2800000, guid: 6b38d952350225549aab191744de9100, type: 3}
 --- !u!1 &1654721729008272140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5098317276292374436}
   - component: {fileID: 6669555814185683079}
-  - component: {fileID: 1699471003}
+  - component: {fileID: 986910553041560398}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
@@ -1245,21 +1275,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.044578075, y: 0.70737326, z: 0.28326875}
     m_Extent: {x: 2.0974412, y: 3.8251119, z: 1.2416935}
   m_DirtyAABB: 0
---- !u!114 &1699471003
+--- !u!114 &986910553041560398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8244144798641286654}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87edd949b6f56b545b29aee61a18881e, type: 3}
+  m_Script: {fileID: 11500000, guid: d17d6667241bacb40bd5859c7bcb563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayMat: {fileID: 2100000, guid: 553a779070af0e942a0a38fc61edb636, type: 2}
-  texSize: 512
-  testingTexture: {fileID: 0}
 --- !u!1 &8328394363500696229
 GameObject:
   m_ObjectHideFlags: 0

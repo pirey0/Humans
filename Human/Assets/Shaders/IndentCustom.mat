@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: cubMat1
-  m_Shader: {fileID: 4800000, guid: 1ed42415a612909448b72a2ed138d42d, type: 3}
+  m_Name: IndentCustom
+  m_Shader: {fileID: 4800000, guid: d46c2488c143f9b42a081a10d9846a8b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,10 +18,8 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: eb01afbc71f987d429fc64c70049b467, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_TexEnvs: []
+    m_Floats:
+    - _HeightOffset: 0.7
+    - _Scale: 0
     m_Colors: []
