@@ -26,7 +26,6 @@ public class StepDrawer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("AAA");
         TryDrawFrom(transform.position + Vector3.up * 0.3f);
     }
 
